@@ -12,7 +12,7 @@
 1. 克隆儲存庫到您的本地機器：
 
     ```sh
-    git clone https://github.com/b10902026-jimmy/tik-tac-toe-AI-from-Github.git
+    git clone https://github.com/b10902026-jimmy/tik-tac-toe-AI-open-source-from-Github
     ```
 
 2. 切換到專案目錄：
@@ -68,7 +68,7 @@ Make sure you running all the command below on `bash` shell. This project uses `
 1. Clone the repository to your local machine:
 
     ```sh
-    https://github.com/b10902026-jimmy/tik-tac-toe-AI-open-source-from-Github-
+    git clone https://github.com/b10902026-jimmy/tik-tac-toe-AI-open-source-from-Github
     ```
 
 2. Change into the project directory:
