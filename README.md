@@ -51,6 +51,7 @@ pipenv shell
 pip install -r requirements.txt
 ```
 ### 感謝你的閱讀與使用！
+------
 
 
 # tik-tac-toe-AI-open-source-from-Github-
