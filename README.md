@@ -18,7 +18,7 @@
 2. 切換到專案目錄：
 
     ```sh
-    cd tik-tac-toe-AI-from-Github
+    cd tik-tac-toe-AI-open-source-from-Github
     ```
 
 3. 運行設置腳本以安裝 `pipenv`、創建虛擬環境並安裝依賴：
@@ -74,7 +74,7 @@ Make sure you running all the command below on `bash` shell. This project uses `
 2. Change into the project directory:
 
     ```sh
-    cd tik-tac-toe-AI-from-Github
+    cd tik-tac-toe-AI-open-source-from-Github
     ```
 
 3. Run the setup script to install `pipenv`, create a virtual environment, and install dependencies:
