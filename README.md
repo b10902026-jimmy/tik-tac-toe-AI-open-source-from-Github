@@ -86,7 +86,7 @@ Make sure you running all the command below on `bash` shell. This project uses `
 
     This script will automatically set up everything required to run the game.
 
-## Running the Game
+## Running the Game（manually）
 
 After the setup is complete, the game will start automatically. If you need to start the game manually, you can do so with the following command:
 
