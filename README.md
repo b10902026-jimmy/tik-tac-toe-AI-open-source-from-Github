@@ -5,7 +5,7 @@ It's an opensource project from github.com
 
 ## Prerequisites
 
-Make sure you have `bash` shell and `Python 3.8` installed on your system. This project uses `pipenv` for dependency management.
+Make sure you running all the command below on `bash` shell. This project uses `pipenv` for dependency management.
 
 ## Setup Instructions
 
