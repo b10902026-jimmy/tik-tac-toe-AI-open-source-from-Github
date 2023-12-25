@@ -37,3 +37,20 @@ After the setup is complete, the game will start automatically. If you need to s
 
 ```sh
 pipenv run python tic-tac-toe-AI.py
+```
+
+## Additional Information
+- If you wish to run other commands within the virtual environment, you can activate the environment shell by running:
+
+```sh
+pipenv shell
+```
+
+ To exit the virtual environment, type exit or press Ctrl+D.
+
+- The requirements.txt file is also provided for those who prefer not to use pipenv. Dependencies can be installed using:
+
+```sh
+pip install -r requirements.txt
+```
+### Thank you for trying out Tic-Tac-Toe AI. Enjoy the game!
