@@ -4,7 +4,7 @@ set -e # 如果任何語句的執行結果不是true則立即退出腳本
 # 檢查是否已安裝 pipenv
 if ! command -v pipenv &> /dev/null
 then
-    echo "pipenv could not be found, now installing pipenv..."
+    echo "pipenv could not be found on the system, now installing pipenv..."
     sudo apt-get update
     sudo apt-get install -y python3.8 python3-pip
     pip3 install pipenv
