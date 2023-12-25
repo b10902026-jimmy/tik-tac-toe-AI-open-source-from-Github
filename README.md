@@ -12,10 +12,8 @@ Make sure you running all the command below on `bash` shell. This project uses `
 1. Clone the repository to your local machine:
 
     ```sh
-    git clone https://github.com/<your-username>/tik-tac-toe-AI-from-Github.git
+    https://github.com/b10902026-jimmy/tik-tac-toe-AI-open-source-from-Github-
     ```
-
-    Replace `<your-username>` with your actual GitHub username.
 
 2. Change into the project directory:
 
