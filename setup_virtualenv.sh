@@ -1,24 +1,27 @@
 #!/bin/bash
+set -e # 如果任何語句的執行結果不是true則立即退出腳本
 
-# 安裝 pipenv
-echo " installing pipenv..."
-sudo apt-get update
-sudo apt-get install -y python3.8 python3-pip
-pip3 install pipenv
+# 檢查是否已安裝 pipenv
+if ! command -v pipenv &> /dev/null
+then
+    echo "pipenv could not be found, now installing pipenv..."
+    sudo apt-get update
+    sudo apt-get install -y python3.8 python3-pip
+    pip3 install pipenv
+else
+    echo "pipenv is already installed"
+fi
 
 # 使用 pipenv 和 Python 3.8 創建虛擬環境
-# pipenv 會自動在專案根目錄下創建一個 .venv 資料夾來存放虛擬環境
-echo " Using Python 3.8 to create virtual enviroment..."
+echo "Using Python 3.8 to create virtual environment..."
 pipenv --python 3.8
 
-echo " Virtual enviroment has been created in .venv director"
+# 安裝依賴項
+echo "Installing dependencies from Pipfile..."
+pipenv install
 
-# 啟動虛擬環境的 shell
-# 使用 'pipenv shell' 進入虛擬環境
-# 在這個 shell 中運行的所有命令都將在虛擬環境中執行
-echo " Entering shell of the virtual enviroment..."
-pipenv shell
+# 啟動虛擬環境並運行 tic-tac-toe-AI.py
+echo "Running tic-tac-toe-AI.py inside virtual environment..."
+pipenv run python tic-tac-toe-AI.py
 
-echo " Enter 'exit' to quit the virtual enviroment "
 
-python tic-tac-toe-AI.py
