@@ -12,10 +12,8 @@
 1. 克隆儲存庫到您的本地機器：
 
     ```sh
-    git clone https://github.com/<your-username>/tik-tac-toe-AI-from-Github.git
+    git clone https://github.com/b10902026-jimmy/tik-tac-toe-AI-from-Github.git
     ```
-
-    將 `<your-username>` 替換為您的實際 GitHub 用戶名。
 
 2. 切換到專案目錄：
 
