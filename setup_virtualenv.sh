@@ -26,10 +26,11 @@ pipenv --python 3.8
 echo "正在從 Pipfile 安裝依賴..."
 pipenv install
 
+echo "將 '$HOME/.local/bin' 添加到 PATH 中" >> ~/.bashrc
+
+echo "設置完成。如果要手動重啟遊戲，請關閉並重新開啟您的終端機，或執行 'source ~/.bashrc' 來應用 PATH 變更。"
+
 # 在虛擬環境中啟動並運行 tic-tac-toe-AI.py
 echo "在虛擬環境中運行 tic-tac-toe-AI.py..."
 pipenv run python tic-tac-toe-AI.py
 
-echo "將 '$HOME/.local/bin' 添加到 PATH 中" >> ~/.bashrc
-
-echo "設置完成。請關閉並重新開啟您的終端機，或執行 'source ~/.bashrc' 來應用 PATH 變更。"
