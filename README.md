@@ -1,4 +1,4 @@
-# 井字遊戲 AI - 從 GitHub 開源專案
+# 井字遊戲（OOXX） AI - 從 GitHub 開源專案
 
 這個專案包含一個簡單的井字遊戲，配備 AI 對手，可以在終端機中運行。以下是設置和運行遊戲的指示。
 這是一個來自 github.com 的開源專案。
@@ -12,15 +12,13 @@
 1. 克隆儲存庫到您的本地機器：
 
     ```sh
-    git clone https://github.com/<your-username>/tik-tac-toe-AI-from-Github.git
+    git clone https://github.com/b10902026-jimmy/tik-tac-toe-AI-open-source-from-Github
     ```
-
-    將 `<your-username>` 替換為您的實際 GitHub 用戶名。
 
 2. 切換到專案目錄：
 
     ```sh
-    cd tik-tac-toe-AI-from-Github
+    cd tik-tac-toe-AI-open-source-from-Github
     ```
 
 3. 運行設置腳本以安裝 `pipenv`、創建虛擬環境並安裝依賴：
@@ -53,6 +51,7 @@ pipenv shell
 pip install -r requirements.txt
 ```
 ### 感謝你的閱讀與使用！
+------
 
 
 # tik-tac-toe-AI-open-source-from-Github-
@@ -69,13 +68,13 @@ Make sure you running all the command below on `bash` shell. This project uses `
 1. Clone the repository to your local machine:
 
     ```sh
-    https://github.com/b10902026-jimmy/tik-tac-toe-AI-open-source-from-Github-
+    git clone https://github.com/b10902026-jimmy/tik-tac-toe-AI-open-source-from-Github
     ```
 
 2. Change into the project directory:
 
     ```sh
-    cd tik-tac-toe-AI-from-Github
+    cd tik-tac-toe-AI-open-source-from-Github
     ```
 
 3. Run the setup script to install `pipenv`, create a virtual environment, and install dependencies:
