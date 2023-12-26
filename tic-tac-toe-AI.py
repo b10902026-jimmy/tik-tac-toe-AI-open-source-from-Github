@@ -1,60 +1,54 @@
-####	TIC TAC TOE    ####
+####	井字遊戲    ####
 
-#START;
+# 開始;
 
-
-#FUNCTIONS;
+# 函數定義;
 
 def default():
-	#To be printed as Default;
-    print("\nWelcome! Let's play TIC TAC TOE!\n")
+	# 預設要顯示的信息;
+    print("\n歡迎！讓我們一起玩井字遊戲吧！\n")
 
 
 def rules():
-    print("The board will look like this!")
-    print("The positions of this 3 x 3 board is same as the right side of your key board.\n")
+    print("棋盤看起來會像這樣！")
+    print("這個 3 x 3 的棋盤位置同您鍵盤右側的數字排列。\n")
     print(" 7 | 8 | 9 ")
     print("-----------")
     print(" 4 | 5 | 6 ")
     print("-----------")
     print(" 1 | 2 | 3 ")
-    print("\nYou just have to input the position(1-9).")
+    print("\n您只需輸入位置號碼（1-9）。")
 
 
 def play():
-	#Asking if the player is ready;
-    return input("\nAre you ready to play the game? Enter [Y]es or [N]o.\t").upper().startswith('Y')
+	# 詢問玩家是否準備好;
+    return input("\n您準備好玩遊戲了嗎？輸入 [Y]es 或 [N]o。\t").upper().startswith('Y')
 
 
 def names():
-    #Player names input;
+    # 玩家名稱輸入;
     
-    p1_name=input("\nEnter NAME of PLAYER 1:\t").capitalize()
-    p2_name=input("Enter NAME of PLAYER 2:\t").capitalize()
+    p1_name=input("\n請輸入玩家 1 的名稱：\t").capitalize()
+    p2_name=input("請輸入玩家 2 的名稱：\t").capitalize()
     return (p1_name, p2_name)
 
 
 def choice():
-    #Player choice input;
+    # 玩家選擇輸入;
     p1_choice = ' '
     p2_choice = ' '
-    while p1_choice != 'X' or p1_choice != 'O':          #while loop; if the entered value isn't X or O;
+    while p1_choice != 'X' or p1_choice != 'O':          # 當輸入的值不是 X 或 O 時;
         
-        #WHILE LOOP STARTS
+        # WHILE 循環開始
 
-        p1_choice = input(f"\n{p1_name}, Do you want to be X or O?\t")[0].upper()
-        #The input above has [0].upper() in the end;
-        #So the user can enter x, X, xxxx or XXX; the input will always be taken as X;
-        #Thereby, increasing the user input window;
+        p1_choice = input(f"\n{p1_name}, 您想選擇 X 還是 O？\t")[0].upper()
 
         if p1_choice == 'X' or p1_choice == 'O':
-            #if entered value is X or O; get out of the loop; 
             break
-        print("INVALID INPUT! Please Try Again!") 
-        #if the entered value isn't X or O, re-run the while loop;
+        print("無效輸入！請重試！") 
 
-        #WHILE LOOP ENDS
-    #Assigning the value to p2 and then diplaying the values;
+        # WHILE 循環結束
+
     if p1_choice == 'X':
         p2_choice = 'O'
     elif p1_choice == 'O':
@@ -63,9 +57,8 @@ def choice():
     return (p1_choice, p2_choice)
 
 
-
 def first_player():
-    #This function will randomly decide who will go first;
+    # 隨機決定誰先開始;
     import random
     return random.choice((0, 1))
 
@@ -80,13 +73,11 @@ def display_board(board, avail):
 
 def player_choice(board, name, choice):
     position = 0
-    #Initialising position as 0^; so it passes through the while loop; 
     while position not in [1,2,3,4,5,6,7,8,9] or not space_check(board, position):
-        position = int(input(f'\n{name} ({choice}), Choose your next position: (1-9) \t'))
+        position = int(input(f'\n{name} ({choice}), 請選擇您的下一個位置：(1-9) \t'))
         
-        if position not in [1,2,3,4,5,6,7,8,9] or not space_check(board, position) or position == "": 
-            #To check whether the given position is in the set [1-9] or whether it is empty or occupied;
-            print(f"INVALID INPUT. Please Try Again!\n")   
+        if position not in [1,2,3,4,5,6,7,8,9] or not space_check(board, position) or position == "":
+            print(f"無效輸入。請重試！\n")   
     print("\n")        
     return position
 
@@ -183,64 +174,61 @@ def replay():
 #MAIN PROGRAM STARTS;
 
 print("\n\t\t NAMASTE! \n")
-input("Press ENTER to start!")
+input("按 ENTER 鍵開始！")
+
 
 default()
 rules()
 
 
+
 while True:
     ####################################################################################
     
-    #Creating the board as a list; to be kept replacing it with user input;
+    # 創建棋盤作為列表；用來不斷替換用戶輸入；
     theBoard = [' ']*10
     
-    #Creating the available options on the board:
-    available = [str(num) for num in range(0,10)] # a List Comprehension
-    #available = '0123456789'
-    
+    # 創建棋盤上可用的選項：
+    available = [str(num) for num in range(0,10)] # 列表推導式
 
-
-    print("\n[0]. Player vs. Computer")
-    print("[1]. Player vs. Player")
-    print("[2]. Computer vs. Computer")
-    mode = int(input("\nSelect an option [0]-[2]: "))
+    print("\n[0]. 玩家對抗電腦")
+    print("[1]. 玩家對抗玩家")
+    print("[2]. 電腦對抗電腦")
+    mode = int(input("\n選擇一個選項 [0]-[2]: "))
     if mode == 1:
-        #Asking Names;
+        # 詢問名稱；
         p1_name, p2_name = names()
-        # Asking Choices; Printing choices; X or O;
+        # 詢問選擇；顯示選擇；X 或 O；
         p1_choice, p2_choice = choice()
         print(f"\n{p1_name}:", p1_choice)
         print(f"{p2_name}:", p2_choice)
 
     elif mode == 0:
-        p1_name = input("\nEnter NAME of PLAYER who will go against the Computer:\t").capitalize()
-        p2_name = "Computer"
-        # Asking Choices; Printing choices; X or O;
+        p1_name = input("\n輸入將與電腦對戰的玩家名稱：\t").capitalize()
+        p2_name = "電腦"
+        # 詢問選擇；顯示選擇；X 或 O；
         p1_choice, p2_choice = choice()
         print(f"\n{p1_name}:", p1_choice)
         print(f"{p2_name}:", p2_choice)
     
     else:
-        p1_name = "Computer1"
-        p2_name = "Computer2"
+        p1_name = "電腦1"
+        p2_name = "電腦2"
         p1_choice, p2_choice = "X", "O"
         print(f"\n{p1_name}:", p1_choice)
         print(f"\n{p2_name}:", p2_choice)
 
-
-    
-    #Printing randomly who will go first;
+    # 隨機打印誰先開始；
     if first_player():
         turn = p2_name
     else:
         turn = p1_name
 
-    print(f"\n{turn} will go first!")
+    print(f"\n{turn} 將先開始！")
     
-    #Asking the user, if ready to play the game; Output will be True or False;
+    # 詢問用戶，是否準備好開始遊戲；輸出將是 True 或 False；
     if(mode == 2):
-        ent = input("\nThis is going to be fast! Press Enter for the battle to begin!\n")
+        ent = input("\n這將會很快！按 Enter 開始戰鬥！\n")
         play_game = 1
     else:
         play_game = play()   
@@ -248,83 +236,80 @@ while True:
     while play_game:
         
         ############################
-        #PLAYER1
+        # 玩家 1
         if turn == p1_name:
             
-            #Displaying the board;
+            # 顯示棋盤；
             display_board(theBoard, available)
 
-            #Position of the input;
+            # 輸入位置；
             if mode != 2:
                 position = player_choice(theBoard, p1_name, p1_choice)
             else:
                 position = CompAI(theBoard, p1_name, p1_choice)
-                print(f'\n{p1_name} ({p1_choice}) has placed on {position}\n')
+                print(f'\n{p1_name} ({p1_choice}) 已放置在位置 {position}\n')
             
-            #Replacing the ' ' at *position* to *p1_choice* in *theBoard* list; 
+            # 將 *theBoard* 列表中 *position* 位置的 ' ' 替換為 *p1_choice*；
             place_marker(theBoard, available, p1_choice, position)
             
-            #To check if Player 1 has won after the current input;
+            # 檢查玩家 1 是否在當前輸入後贏得遊戲；
             if win_check(theBoard, p1_choice):
                 display_board(theBoard, available)
                 print("~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~")
                 if(mode):
-                    print(f'\n\nCONGRATULATIONS {p1_name}! YOU HAVE WON THE GAME!\n\n')
+                    print(f'\n\n恭喜 {p1_name}！您贏得了遊戲！\n\n')
                 else:
-                    print('\n\nTHE Computer HAS WON THE GAME!\n\n')
+                    print('\n\n電腦贏得了遊戲！\n\n')
                 print("~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~")
                 play_game = False
                 
             else:
-                #To check if the board is full; if yes, the game is a draw;
+                # 檢查棋盤是否已滿；如果是，則遊戲平局；
                 if full_board_check(theBoard):
                     display_board(theBoard, available)
                     print("~~~~~~~~~~~~~~~~~~")
-                    print('\nThe game is a DRAW!\n')
+                    print('\n遊戲平局！\n')
                     print("~~~~~~~~~~~~~~~~~~")
                     break
-                #If none of the above is possible, next turn of Player 2;    
                 else:
                     turn = p2_name
                     
-                    
         ############################
-        #PLAYER2            
+        # 玩家 2          
         elif turn == p2_name:
             
-            #Displaying the board;
+            # 顯示棋盤；
             display_board(theBoard, available)
 
-            #Position of the input;
+            # 輸入位置；
             if(mode == 1):
                 position = player_choice(theBoard, p2_name, p2_choice)
             else:
                 position = CompAI(theBoard, p2_name, p2_choice)
-                print(f'\n{p2_name} ({p2_choice}) has placed on {position}\n')
+                print(f'\n{p2_name} ({p2_choice}) 已放置在位置 {position}\n')
             
-            #Replacing the ' ' at *position* to *p2_choice* in *theBoard* list; 
+            # 將 *theBoard* 列表中 *position* 位置的 ' ' 替換為 *p2_choice*；
             place_marker(theBoard, available, p2_choice, position)
             
-            #To check if Player 2 has won after the current input;
+            # 檢查玩家 2 是否在當前輸入後贏得遊戲；
             if win_check(theBoard, p2_choice):
                 display_board(theBoard, available)
                 print("~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~")
                 if(mode):
-                    print(f'\n\nCONGRATULATIONS {p2_name}! YOU HAVE WON THE GAME!\n\n')
+                    print(f'\n\n恭喜 {p2_name}！您贏得了遊戲！\n\n')
                 else:
-                    print('\n\nTHE Computer HAS WON THE GAME!\n\n')
+                    print('\n\n電腦贏得了遊戲！\n\n')
                 print("~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~")
                 play_game = False
                 
             else:
-                #To check if the board is full; if yes, the game is a draw;
+                # 檢查棋盤是否已滿；如果是，則遊戲平局；
                 if full_board_check(theBoard):
                     display_board(theBoard, available)
                     print("~~~~~~~~~~~~~~~~~~")
-                    print('\nThe game is a DRAW!\n')
+                    print('\n遊戲平局！\n')
                     print("~~~~~~~~~~~~~~~~~~")
                     break
-                #If none of the above is possible, next turn of Player 2;       
                 else:
                     turn = p1_name
         
@@ -339,7 +324,7 @@ while True:
         
     ####################################################################################
     
-print("\n\n\t\t\tTHE END!")
+print("\n\n\t\t\t遊戲結束！")
 
 
 
