@@ -15,6 +15,7 @@ then
     PIPENV_PATH=$(python3 -m site --user-base)/bin
     echo "export PATH=\"$PIPENV_PATH:\$PATH\"" >> ~/.bashrc
     export PATH="$PIPENV_PATH:$PATH"
+    echo "pipenv設置完成。如果要手動重啟遊戲，請關閉並重新開啟您的終端機，或執行 'source ~/.bashrc' 來應用 PATH 變更。"
 else
     echo "pipenv 已經安裝"
 fi
@@ -30,8 +31,6 @@ echo "已建立.venv虛擬環境資料夾"
 echo "正在從 Pipfile 安裝依賴..."
 pipenv install
 
-
-echo "設置完成。如果要手動重啟遊戲，請關閉並重新開啟您的終端機，或執行 'source ~/.bashrc' 來應用 PATH 變更。"
 
 # 在虛擬環境中啟動並運行 tic-tac-toe-AI.py
 echo "在虛擬環境中運行 tic-tac-toe-AI.py..."
