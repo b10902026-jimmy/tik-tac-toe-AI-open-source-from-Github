@@ -23,6 +23,8 @@ fi
 echo "正在使用 Python 3.8 創建虛擬環境..."
 pipenv --python 3.8
 
+mkdir .venv
+
 # 從 Pipfile 安裝依賴
 echo "正在從 Pipfile 安裝依賴..."
 pipenv install
