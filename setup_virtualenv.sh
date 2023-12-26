@@ -7,7 +7,13 @@ then
     echo "pipenv could not be found on the system, now installing pipenv..."
     sudo apt-get update
     sudo apt-get install -y python3.8 python3-pip
+
+    # 安裝 pipenv
     pip3 install pipenv
+
+    # 將 pipenv 安裝路徑添加到當前 session 的 PATH
+    PIPENV_PATH=$(python3 -m site --user-base)/bin
+    export PATH="$PIPENV_PATH:$PATH"
 else
     echo "pipenv is already installed"
 fi
@@ -25,3 +31,7 @@ echo "Running tic-tac-toe-AI.py inside virtual environment..."
 pipenv run python tic-tac-toe-AI.py
 
 
+
+echo "export PATH=\"$HOME/.local/bin:$PATH\"" >> ~/.bashrc
+
+echo "Setup is complete. Please close and reopen your terminal or run 'source ~/.bashrc' to apply PATH changes."
