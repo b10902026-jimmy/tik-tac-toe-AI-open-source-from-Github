@@ -11,6 +11,11 @@ then
     # 安裝 pipenv
     pip3 install pipenv
 
+    # 設置環境變數
+    echo "設置 PIPENV_VENV_IN_PROJECT 環境變數為enabled..."
+    export PIPENV_VENV_IN_PROJECT="enabled"
+    echo 'export PIPENV_VENV_IN_PROJECT="enabled"' >> ~/.bashrc
+
     # 將 pipenv 安裝路徑添加到當前會話的 PATH 中
     PIPENV_PATH=$(python3 -m site --user-base)/bin
     echo "export PATH=\"$PIPENV_PATH:\$PATH\"" >> ~/.bashrc
