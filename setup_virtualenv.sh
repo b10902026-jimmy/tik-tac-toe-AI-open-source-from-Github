@@ -23,10 +23,12 @@ then
     echo "pipenv設置完成。如果要手動重啟遊戲，請關閉並重新開啟您的終端機，或執行 'source ~/.bashrc' 來應用 PATH 變更。"
 else
     echo "pipenv 已經安裝"
+    echo "設置 PIPENV_VENV_IN_PROJECT 環境變數為enabled..."
+    export PIPENV_VENV_IN_PROJECT="enabled"
+    echo 'export PIPENV_VENV_IN_PROJECT="enabled"' >> ~/.bashrc
+    echo "執行 'source ~/.bashrc' 套用環境變數變更。"
 fi
 
-mkdir .venv
-echo "已建立.venv虛擬環境資料夾"
 
 # 使用 pipenv 和 Python 3.8 創建虛擬環境
 echo "正在使用 Python 3.8 創建虛擬環境..."
